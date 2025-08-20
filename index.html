@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WAF Cookie Test - ffive.rest</title>
+  <title>Simple Test Page - ffive.rest</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,28 +17,10 @@
     p {
       color: #34495e;
     }
-    code {
-      background: #eee;
-      padding: 2px 4px;
-      border-radius: 4px;
-    }
   </style>
-  <script>
-    // ✅ Normal test cookie
-    document.cookie = "MyTestCookie=12345; path=/";
-
-    // ❌ Malicious cookie (contains script tag) – should trigger WAF
-    document.cookie = "EvilCookie=<script>alert(1)</script>; path=/";
-  </script>
 </head>
 <body>
-  <h1>WAF Cookie Test Page</h1>
-  <p>This page sets two cookies for testing F5XC WAF:</p>
-  <ul>
-    <li><code>MyTestCookie=12345</code></li>
-    <li><code>EvilCookie=&lt;script&gt;alert(1)&lt;/script&gt;</code> (malicious)</li>
-  </ul>
-  <p>Check DevTools → Application → Cookies to confirm they’re set.<br>
-     Then access through your Load Balancer and check <b>WAF Events</b> in F5XC.</p>
+  <h1>Simple Test Page</h1>
+  <p>This is a clean webpage without any cookies or scripts.</p>
 </body>
 </html>
